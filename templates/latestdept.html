@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}latest dept update{% endblock title %}
+{% block body %}
+<div class="mca-table table-responsive-xl table-responsive-sm ">      
+    <table  >
+        <caption>Lastest Deparment Event Update</caption>
+        <thead>
+          <tr>
+            <th >S.No</th>
+            <th>Upload Date</th>
+            <th>Title</th>
+            <th>Files</th>
+          </tr>
+        </thead>
+        <tbody>
+           {% if latestdept %}
+        {% for latestdepts in latestdept %}     
+        <tr>                    
+          <td>{{latestdepts.id}}</td>
+          <td>{{latestdepts.upload_date|date:"d-m-Y  g:m A  "}}</td>
+          <td>{{latestdepts.title}}</td>
+          <td><a href="{{latestdepts.file.url}}">download</a></td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+         
+        </tbody>
+      </table>
+</div>
+{% endblock body %}

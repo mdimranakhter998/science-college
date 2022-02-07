@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}mca notice{% endblock title %}
+{% block body %}
+<div class="mca-table table-responsive-xl table-responsive-sm ">      
+    <table  >
+        <caption>Statistics semister4 question</caption>
+        <thead>
+          <tr>
+            <th >S.No</th>            
+            <th>Title</th>
+            <th>Files</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% if statsem4 %}
+        {% for statsem in statsem4 %}     
+        <tr>                    
+          <td>{{statsem.id}}</td>          
+          <td>{{statsem.title}}</td>
+          <td><a href="{{statsem.file.url}}">download</a></td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        </tbody>
+      </table>
+</div>
+{% endblock body %}

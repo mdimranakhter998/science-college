@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}mca ebook{% endblock title %}
+{% block body %}
+<div class="mca-table table-responsive-xl table-responsive-sm ">      
+    <table  >
+        <caption>M.C.A Department e-books for various subjects</caption>
+        <thead>
+          <tr>
+            <th >S.No</th>
+            <th>Book Title</th>
+            <th>Book Writer</th>
+            <th>Files</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% if mcaebook %}
+        {% for mcaebooks in mcaebook %}     
+        <tr>                    
+          <td>{{mcaebooks.id}}</td>
+          <td>{{mcaebooks.title}}</td>
+          <td>{{mcaebooks.writer}}</td>
+          <td><a href="{{mcaebooks.file.url}}">download</a></td>
+        </tr>
+        {% endfor %}
+        {% endif %}         
+        </tbody>
+      </table>
+</div>
+{% endblock body %}

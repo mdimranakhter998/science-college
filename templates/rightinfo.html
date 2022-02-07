@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Right To Information Act{% endblock title %}
+{% block body %}
+<div class="container mca-table text-center py-5"> 
+    <div class="pb-3"><h2>Right to Information Act, 2005</h2>
+     <hr> 
+    </div>
+       
+    <table >
+        <caption>RTI Postal Enquiry</caption>
+        
+        <tbody>        
+        <tr>                    
+          <td>Appellate Authority </td>
+          <td>Vice Chancellor, <br>
+            Patna University, Patna, <br>
+            PIN - 800005 <br>
+            Ph.No. 0612-2670352 (O)
+            </td>                   
+        </tr>
+        <tr>
+        <td>Public Information Officer </td>
+        <td>Registrar, <br>
+            Patna University, Patna, <br>
+            PIN - 800005 <br>
+            Ph.No. 0612-2371272 (O) <br>
+            0612-2678008 
+            </td>
+        </tr>
+        <tr>
+        <td>Assistant Public Information Officer</td>
+        <td>
+            Deputy Registrar, <br>
+            Patna University, Patna, <br>
+            PIN - 800005 <br>
+            Ph.No. 0612-2670853 (O)
+        </td>
+        </tr>
+        <tr>
+        <td>Download RTI Form A </td>
+        <td><a href="{% static 'pdf/RTI Form A.pdf'%}">Download</a></td>
+        </tr>
+             
+        </tbody>
+      </table>
+</div>
+{% endblock body %}

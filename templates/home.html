@@ -1,0 +1,193 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+M.C.A | Dept Of Statistics
+{% endblock title %}
+{% block body %}
+ <!-- carousel -->
+ 
+ <div id="carouselExampleControls" class="carousel slide contain" data-bs-ride="carousel">
+   
+    <div class="carousel-inner banner">    
+        
+        <div class="carousel-item  carousel  active">
+         <img src="{% static 'slider/20211020_151821.jpg' %}" class="d-block w-100" alt="...">
+      </div> 
+      <div class="carousel-item  carousel ">
+        <img src="{% static 'slider/20211020_150033.jpg' %}" class="d-block w-100" alt="...">
+     </div> 
+     <div class="carousel-item  carousel ">
+        <img src="{% static 'slider/20211020_152054.jpg' %}" class="d-block w-100" alt="...">
+     </div> 
+          
+    </div>
+   
+    <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" style="font-size: 2em;" aria-hidden="true"></span>
+      <span class="visually-hidden ">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+     
+</div>
+
+<!-- professor information -->
+<div class="professor">
+    <div class="professor-header">
+    <h3>M.C.A | Department Of Statistics</h3>
+    <a href="https://pup.ac.in/" target="_blank" rel="noopener noreferrer">Pride of Patna University</a>
+    </div>
+    <hr style="margin:0px 50px; color: rgb(77, 74, 74);">
+    <div class="professor-information">
+        <div class="pro-info">
+            <div class="pro-img">
+                <img src="{% static 'images/fhagu_chauhan.jpg' %}" alt="" srcset="">
+            </div>
+            <div class="pro-name">                
+                <p>Shri Phagu Chauhan 
+                    <br>
+                    Chancellor, Patna University
+                    <br>
+                    Governor of Bihar
+                </p>
+            </div>
+        </div>
+        <div class="pro-info">
+            <div class="pro-img">
+                <img src="{% static 'images/cgc.jpg' %}" alt="" srcset="">
+            </div>
+            <div class="pro-name">
+                <p>Prof. Girish Kumar Choudhary 
+                    <br>
+                    Vice Chancellor, Patna University
+                </p>                
+            </div>
+        </div>
+       <div class="pro-info">
+            <div class="pro-img">
+                <img src="{% static 'images/paks.jpg' %}" alt="" srcset="">
+            </div>
+            <div class="pro-name">
+                <p>Prof. Ajay Kumar Singh <br>
+                Pro-Vice Chancellor, Patna University  
+                </p>            
+            </div>
+       </div>
+       <div class="pro-info">
+            <div class="pro-img">
+                <img src="{% static 'images/dr_binod.jpg' %}" alt="" srcset="">
+            </div>
+            <div class="pro-name">
+                <p>Prof. (Dr.) Binod Kumar Pandey 
+                    <br>
+                Head of the Department of Statistics,
+                <br>
+                Patna University
+                </p>
+            </div>
+       </div>
+    </div>
+</div>
+
+<!-- department information -->
+
+<div class="dept-informatin">
+    <div class="dept-header">
+        <h3>Department Of Statistics</h3>
+        <hr style="margin:20px 50px; color: rgb(37, 35, 35);">
+    </div>
+    <div class="dept-info">
+        <div class="dept-img">
+            <img src="{% static 'images/sc (1).jpeg' %}" alt="" srcset="">
+        </div>
+        <div class="dept-content">
+            <p> The Post-graduate Department of Statistics was established in 1948 for teaching Statistics at the Master's level (M. A. and M. Sc. courses). The Department, being a member of the Faculty of Science, was moved to Patna Science College campus in 1960. The Ministry of Health and Family Welfare, Government of India, New Delhi, opened a Population Research Centre in 1966 with the Head of the Department as its Chief for conducting statistical investigation in areas related to population studies.</p>
+
+               <p>
+                Mater's Programme<br>
+                M.A./M.Sc. in Statistics<br>
+                Duration : 2 Years<br>
+                M.A./M.Sc. Part-I & M.A./M.Sc. Part-II No. of Papers : 16<br>
+                No. of Seats : 36<br>
+               </p>                
+               <p>
+                Other Courses<br>
+                (I) Master of Computer Application (MCA) Vocational Course of three years duration.<br>
+                (II) Post-graduate Diploma in Computer Applications (PGDCA)<br>
+                (III) Post-graduate Diploma in Actuarial Science (PGDAS) Vocational Course of one year duration.                
+               </p>
+               <p>
+                Infrastructure and Facilities<br>
+                Apart from two computer laboratories the department has a rich library, which provides text and reference books. </p>
+        </div>        
+    </div>
+</div>
+<!-- dept of head information -->
+
+<div class="head-information">
+    <div class="head-header">
+        <h3>
+            From Head Of Department’s Perspective          
+        </h3> 
+        <hr style="margin:0px 50px; color: rgb(77, 74, 74);">       
+    </div>   
+    <div class="head-info">
+        <div class="head-img">
+            <img src="{% static 'images/hod.jpg' %}" alt="" srcset="">
+        </div>
+        <div class="head-content">
+            <p>I have started working as the Head of Department of M.C.A | Department of Statistics, Patna University from the forenoon of May 2, 2017. I am overwhelmed and my emotion has surfaced in writing this message for those who love M.C.A | Department of Statistics and are emotionally bound to the culture of M.C.A | Department of Statistics. </p>
+        </div>              
+    </div>
+</div>
+
+<!-- mca dapartment information -->
+<div class="college">
+    
+    <div class="mca-header">
+        <h3>Vision & Mission</h3>
+    </div>
+    <hr style="margin:0px 100px; color: rgb(77, 74, 74);">
+    <div class="link">            
+        <li id="#mca-link1" class="active" ><a href="#mca-link">M.C.A</a></li>
+        <li id="#stats-link1"><a href="#stats-link">Department Of Statistics</a></li>       
+    </div>   
+    <hr style=" margin:0px 40px; color: rgb(233, 233, 233);">
+    <div class="mca-info" id="mca-show">
+        <h3>Vision of M.C.A Programme</h3><br>
+        <p>The creation of modern academic environment in teaching and research by introducing Information Communication Technology, providing entrepreneurial skills among teh student and imparting quality education to syudent for equipping them with globally competent help in economin development and nation building </p><br>
+        <h3>Mission of M.C.A Programme</h3><br>
+        <p>
+            • Developing theoretical and practicle acumen in modern interdisciplinary areas.<br>
+            • Preparing student who will contribute in society as broadly educated expressive, ethical, and responsible citizen with proven expertis. <br>
+            • Adapting students to proficient human resources through master level courses in computer applications. <br>
+            • Striving for building quality professionals who are committed and self-motivated with specific skills and to prepare students for the diverse workplace for the Global Environment. <br>
+            • Inculcating the responsibilty towards society and making students sensitive to Environmental Protection.
+
+        </p>
+    </div>
+    <div class="stats-info" id="#stats-hide">
+        <h3>Vision of Department of Statistics</h3><br>
+        <p>  Creation of an academically sound environment that nurtures, motivates and inspires excellence in research and teaching in Statistics through big data analysis resulting in interdisciplinary approach towards the service of the society and the nation aiming innovations and tracking cultural, societal demographic and ecological changes.</p>
+        <h3> Mission of Department of Statistics </h3><br>
+        <p>
+        • To produce committed and professionally skilled human resources who can lead the globe in future. <br>
+        • To make it a platform for analyzing the data from other academic fields such as medical sciences, environmental sciences, engineering sciences, social sciences, and humanities. <br>
+        • To investigate, track and propose viable solutions to the issues in studies related to demography. <br>
+        • To Collaborate with the manufacturing indutries by supervising the Total Quality Management (TQM) 
+        </p>
+    </div>
+    
+</div>
+
+
+
+{% endblock body %}
+
+{% block js %}
+
+{% endblock js %}
+
+

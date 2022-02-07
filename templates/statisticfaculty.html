@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load conversion %}
+{% block title %}Statistics faculty{% endblock title %}
+{% block body %}
+<div class="statistics-faculty py-4 ">    
+    <div class="text-center statistics-faculty-header">
+        <h2>Faculties of M.C.A Department</h2> 
+    </div>
+    {% if stats %}
+    {% for st in stats %}
+    <div class="row d-flex flex-row justify-content-around mt-5 statistics-faculty-body ">        
+        <div class="d-flex flex-row justify-content-end col-xxl-4 col-xl-4  col-lg-4 col-md-4 col-sm-4 col-6  mca-faculty-img ">
+            <img class=" img-fluid  img-thumbnail  rounded-circle " src="{{st.img.url}}" alt="" srcset="" >
+        </div>           
+        <div class="d-flex flex-row justify-content-start mca-faculty-content px-0 col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-5 col-7 " >
+            <ul style="list-style: none;">
+                <li>Name:{{st.name}}</li>  
+                <li>Administrative Post:{{st.administrative_post}}</li>                
+                <li>Qualification:{{st.qualification.all|qualification}}</li> 
+                <li>Specialization: </li>
+                {% for s in st.subject.all|specialization %} 
+                <ul>
+                    <li>{{s}}</li>
+                </ul>             
+                {% endfor %}
+                <li>Experience:{{st.experience|experience}}</li>
+            </ul>
+        </div>   
+         
+    </div>
+    <hr>
+    {% endfor %}
+    {% endif %}
+
+</div>
+
+{% endblock body %}

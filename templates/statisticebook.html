@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}statistic ebook{% endblock title %}
+{% block body %}
+<div class="mca-table table-responsive-xl table-responsive-sm ">      
+    <table  >
+        <caption>Department of Statistics e-books for various subjects</caption>
+        <thead>
+          <tr>
+            <th >S.No</th>
+            <th>Book Title</th>
+            <th>Book Writer</th>
+            <th>Files</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% if statisticebook %}
+        {% for statisticebooks in statisticebook %}     
+        <tr>                    
+          <td>{{statisticebooks.id}}</td>
+          <td>{{statisticebooks.title}}</td>
+          <td>{{statisticebooks.writer}}</td>
+          <td><a href="{{statisticebooks.file.url}}">download</a></td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+         
+        </tbody>
+      </table>
+</div>
+{% endblock body %}

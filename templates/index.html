@@ -1,0 +1,223 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap css     -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
+    <!-- favicon  -->
+    <link rel="icon" href="{% static 'images/psc.png' %}" type="image/png" sizes="16x16">   
+    <title> {% block title %}{% endblock title %} </title>     
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+      
+</head>
+<body>      
+    <div class="navbar1">                     
+        <div class="logo ">
+            <a href="{% url 'home' %}"><img src="{% static 'images/psc.png' %}" alt="logo" srcset="" ></a>
+        </div> 
+                 
+        <div class="navbar-content" id="content">                                 
+            <div class="search">                    
+                <input type="text" name="search" id=""  placeholder="Search Blog" >
+            </div>
+            <div class="block"><a href="{% url 'studentblog' %}"><i class="fas fa-search"></i></a></div>
+        
+            <div class="block" id="admin"><i class="fas fa-sign-in-alt"></i></div>
+            <div class="block"><a href="">Go To Patna University</a></div>
+            <div class="block"> <a href="{% url 'studentblog' %}">Student Blog</a></div>
+        </div>
+        <div class="menu-btn" id="bar">
+            <i class="fas fa-bars"></i>
+        </div>        
+        <div class="nav-items" id="items">
+            <ul class="menu ">
+                <li><a href="">Notice <i class="fas fa-sort-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'mcanotice' %}">MCA Deparment</a></li>
+                        <li><a href="{% url 'statisticnotice' %}">Statistics Deparment</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="">Admission <i class="fas fa-sort-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'mcaadmission' %}">MCA Deparment</a></li>
+                        <li><a href="{% url 'statisticadmission' %}">Statistics Deparment</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Results <i class="fas fa-sort-down"></i> </a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'mcaresult' %}">MCA Deparment</a></li>
+                        <li><a href="{% url 'statisticresult' %}">Statistics Deparment</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Course <i class="fas fa-sort-down"></i> </a>
+                    <ul class="submenu">
+                        <li><a href="{% static 'pdf/Master of Computer Applicaton.pdf' %}" >MCA Deparment</a></li>
+                        <li><a href="{% static 'pdf/STATISTICS new (CBCS ) Syllabus.pdf' %}" target="_blank">Statistics Deparment</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Faculties <i class="fas fa-sort-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'mcafaculty' %}">MCA Deparment</a></li>
+                        <li><a href="{% url 'statisticfaculty' %}">Statistics Deparment</a></li>                      
+                    </ul>
+                </li>
+                <li><a href="{% url 'latestdept' %}">Lastest Department Update</a></li>
+                <li><a href="">E-Books <i class="fas fa-sort-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'mcaebook' %}">MCA Deparment</a></li>
+                        <li><a href="{% url 'statisticebook' %}">Statistics Deparment</a></li>
+                    </ul>                
+                </li>
+                <li><a href="">Previous Year Questions <i class="fas fa-sort-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="">MCA Deparment</a>
+                            <ul class="submenu1">
+                                <li><a href="{% url 'mcasem1' %}">Semester 1</a></li>
+                                <li><a href="{% url 'mcasem2' %}">semester 2</a></li>
+                                <li><a href="{% url 'mcasem3' %}">Semester 3</a></li>
+                                <li><a href="{% url 'mcasem4' %}">semester 4</a></li>
+                                <li><a href="{% url 'mcasem5' %}">Semester 5</a></li>
+                                <li><a href="{% url 'mcasem6' %}">semester 6</a></li>
+                            </ul>    
+                        </li>
+                        <li><a href="">Statistic Deparment</a>
+                            <ul class="submenu2">
+                                <li><a href="{% url 'statsem1' %}">Semester 1</a></li>
+                                <li><a href="{% url 'statsem2' %}">semester 2</a></li>
+                                <li><a href="{% url 'statsem3' %}">Semester 3</a></li>
+                                <li><a href="{% url 'statsem4' %}">semester 4</a></li>
+                                <li><a href="{% url 'statsem5' %}">Semester 5</a></li>
+                                <li><a href="{% url 'statsem6' %}">semester 6</a></li>
+                            </ul>    
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                <li><a href="">About Department <i class="fas fa-sort-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'aboutus' %}">About Us </a></li>
+                        <li><a href="{% url 'rightinfo' %}" >Right To Information Act</a></li>
+                        <li><a href="{% url 'antiragging' %}">Anti-Ragging Circuler</a></li>
+                    </ul>
+                </li>
+                <li ><button id="contact">Contact Us</button></li>
+            </ul>
+        </div>            
+    </div> 
+
+    <div class="contactus container  col-xxl-6 col-xl-6 col-lg-8 col-md-8 col-sm-7 col-9" id="contactus">
+        <div class="contactus-header py-2 mb-3 text-center ">
+            <h2>M.C.A | Department of Statistics</h2>
+        </div>
+        <div class="contactus-body px-3 py-2">
+       <form   method="POST" enctype="multipart/form-data"  id="contactus-form" novalidate> {% csrf_token %}
+                        
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                <label for="name">Name</label>            
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                <label for="email">Email address</label>
+            </div>        
+            <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Leave a comment here" id="textarea" name="textarea" cols="30" rows="10"></textarea>
+                <label for="textarea">Query</label>
+                
+            </div>
+            <div class="mb-3">
+            <input type="file" name="file" id="file">
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button> <br>
+            <button id="contactclose" type="button" class="btn btn-danger float-end mb-3">close</button> 
+        </form>
+        </div>
+    </div>
+    <!-- admin login form -->
+    <div class="contactus container  col-xxl-6 col-xl-6 col-lg-8 col-md-8 col-sm-7 col-9" id="adminlogin" >
+        <div class="contactus-header py-2 mb-3 text-center ">
+            <h4>M.C.A | Department of Statistics</h4>
+            <h4>Admin Login</h4>
+        </div>
+        <div class="contactus-body px-3 py-2">
+       <form action="{% url 'adminlogin' %}" enctype="multipart/form-data" method="POST"  id="adminlogin-form" novalidate> {% csrf_token %}
+                        
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="userid" name="userid" placeholder="Enter your UserId">
+                <label for="userid">User ID</label>            
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your Password">
+                <label for="password">password</label>
+            </div>        
+            
+            <button type="submit" class="btn btn-success">Submit</button> <br> 
+            <button id="adminclose" type="button" class="btn btn-danger float-end mb-3">close</button> 
+        </form>
+        </div>
+    </div>
+
+    {% block body %}  
+          
+    {% endblock body %}   
+
+    
+
+<!-- footer -->
+<div class="footer">
+    <div class="address">
+        <p>
+            Address: <br>
+            Beside Patna University, Ashok Rajpath <br>
+            In Campus of Patna Science College <br>
+            Patna - 800005 (BIHAR), INDIA <br>
+            Telephone:- +91 612 6453577 <br>
+            Email - ?? 
+        </p>
+    </div>
+    <div class="Qrcode">
+        <img src="{% static 'images/web.png' %}" alt="">
+    </div>
+    <div class="important-link">
+        <h5>Important Links</h5>
+        <ul>
+            <li><a href="http://www.education.bih.nic.in/" target="_blank">Education Department Bihar </a></li>
+            <li><a href="{% static 'pdf/Calendar 2020' %}" target="_blank">Academic Calender</a></li>
+            <li><a href="https://governor.bih.nic.in/" target="_blank">Governal Of Bihar</a></li>
+            <li><a href="">FeedBack Form</a></li>
+            <li><a href="https://swayam.gov.in/" target="_blank">Swayam</a></li>
+        </ul>
+    </div>
+</div>
+
+    
+     
+    <!-- bootstrap javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- jquery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+    <!-- jquery validation -->
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+   <!-- sweat alert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/contactus.js' %}"></script>    
+    <script src="{% static 'js/adminlogin.js' %}"></script>  
+    
+   
+    {% block js %}
+        
+    {% endblock js %}
+    
+     
+       
+</body>
+</html>

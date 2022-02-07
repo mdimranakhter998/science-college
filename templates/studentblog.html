@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}student blog{% endblock title %}
+{% block body %}
+<div class="studentblog px-4 py-5 ">      
+    <div class="row d-flex justify-content-around ">        
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex flex-column"> 
+            {% if studentblog %}  
+            {% for stublog in studentblog %} 
+            <div>  
+                <h5>{{stublog.title}}</h5> 
+                <p><span>Published On:</span>{{stublog.upload_date|date:"d-m-Y g:m A"}}</p>  
+                <p><span>Author:</span>{{stublog.author}}</p>                   
+                <p> <img src="{{stublog.img.url}}" alt="" class=" img-fluid img-thumbnail"></p>
+                <p>{{stublog.content}}</p>  
+                    <hr>                                
+            </div>           
+            {% endfor %}
+            {% endif %}            
+           {% if studentfilter %}           
+           <div >  
+            <h5>{{studentfilter.title}}</h5> 
+            <p><span>Published On:</span>{{ studentfilter.upload_date|date:"d-m-Y g:m A"}}</p>  
+            <p><span>Author:</span>{{ studentfilter.author}}</p>                   
+            <p > <img src="{{ studentfilter.img.url}}" alt="" class=" img-fluid img-thumbnail"></p>
+            <p>{{studentfilter.content}}</p>  
+                <hr>                                
+        </div> 
+        {% endif %}
+        </div>        
+        <div class="post  col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-8  text-center ">         
+           <div class="post-header">
+                <h4 >post</h4> 
+           </div> 
+           {% if studentblog %}  
+            {% for stublog in studentblog %}       
+            <div class="post-body py-1 px-3">                                        
+                <p><a href="?filter={{stublog.id}}"><img src="{{stublog.img.url}}" alt="" class=" img-fluid img-thumbnail h-25" ></a></p>
+                <h5>{{stublog.title}}</h5>
+                <hr>
+            </div>            
+            {% endfor %}           
+            {% endif %}
+            {% if post %} 
+            {% for post in post %}           
+            <div class="post-body py-1 px-3">                                        
+                <p><a href="?filter={{post.id}}"><img src="{{post.img.url}}" alt="" class=" img-fluid img-thumbnail h-25" ></a></p>
+                <h5>{{studentfilter.title}}</h5>
+                <hr>
+            </div> 
+             {% endfor %}         
+            {% endif %}
+        </div>
+    
+        
+    </div>
+ <nav aria-label="Page navigation example ">
+  <ul class="pagination d-flex justify-content-center pt-5">
+    {% if studentblog.has_previous %}
+    <li class="page-item"><a class="page-link" href="?page=1">First</a></li>    
+    <li class="page-item"><a class="page-link" href="?page={{ studentblog.previous_page_number }}">Previous</a></li>
+    {% endif %}    
+    {% for n in total %}     
+         <li class="page-item"><a class="page-link" href="?page={{n}}">{{n}}</a></li>    
+    {% endfor %} 
+    {% if studentblog.has_next %}    
+    <li class="page-item"><a class="page-link" href="?page={{ studentblog.next_page_number }}">Next</a></li>
+    <li class="page-item"><a class="page-link" href="?page={{studentblog.paginator.num_pages}}">Last</a></li>
+    {% endif %}
+  </ul>
+</nav>    
+</div>
+{% endblock body %}

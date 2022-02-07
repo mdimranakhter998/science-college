@@ -1,0 +1,38 @@
+from unicodedata import name
+from django.urls import path
+from . import views
+urlpatterns = [
+    path('',views.home,name="home"),
+    path('mcanotice/',views.mcanotice ,name="mcanotice"),
+    path('statisticnotice/', views.statisticnotice,name="statisticnotice"),
+    path('mcaadmission/',views.mcaadmission ,name="mcaadmission"),
+    path('statisticadmission/', views.statisticadmission,name="statisticadmission"),
+    path('mcaresult/',views.mcaresult,name="mcaresult"),
+    path('statisticresult/',views.statisticresult,name="statisticresult"),
+    path('mcasyllabus/',views.mcacourse,name="mcasyllabus"),
+    path('mcafaculty/',views.mcafaculty,name="mcafaculty"),
+    path('statisticfaculty/',views.statisticfaculty,name="statisticfaculty"),   
+    path('latestdept/',views.latestdept,name="latestdept"),
+    path('mcaebook/',views.mcaebook,name="mcaebook"),
+    path('statisticebook/',views.statisticebook,name="statisticebook"),
+    path('mcasem1/',views.mcasemister1,name="mcasem1"),
+    path('mcasem2/',views.mcasemister2,name="mcasem2"),
+    path('mcasem3/',views.mcasemister3,name="mcasem3"),
+    path('mcasem4/',views.mcasemister4,name="mcasem4"),
+    path('mcasem5/',views.mcasemister5,name="mcasem5"),
+    path('mcasem6/',views.mcasemister6,name="mcasem6"),
+    path('statsem1/',views.statisticsemister1,name="statsem1"),
+    path('statsem2/',views.statisticsemister2,name="statsem2"),
+    path('statsem3/',views.statisticsemister3,name="statsem3"),
+    path('statsem4/',views.statisticsemister4,name="statsem4"),
+    path('statsem5/',views.statisticsemister5,name="statsem5"),
+    path('statsem6/',views.statisticsemister6,name="statsem6"),
+    path('gallery/',views.gallery,name="gallery"),
+    path('studentblog/',views.studentblog,name="studentblog"),
+    path('aboutus/',views.aboutus,name="aboutus"),
+    path('antiragging/',views.antiragging,name='antiragging'),
+    path('rightinfo/',views.rightinfo,name='rightinfo'),
+    path('contactus/',views.contactus,name='contactus'),
+    path('adminlogin/',views.adminlogin,name='adminlogin'),
+    
+]

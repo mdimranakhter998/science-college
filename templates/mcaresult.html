@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}mca result{% endblock title %}
+{% block body %}
+<div class="mca-table table-responsive-xl table-responsive-sm ">      
+    <table  >
+        <caption>M.C.A Department Result</caption>
+        <thead>
+          <tr>
+            <th >S.No</th>
+            <th>Date of Upload</th>
+            <th>Title</th>
+            <th>Files</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% if mca_result %}
+        {% for mcaresult in mca_result %}     
+        <tr>                    
+          <td>{{mcaresult.id}}</td>
+          <td>{{mcaresult.upload_date|date:"d-m-Y"}}</td>
+          <td>{{mcaresult.title}}</td>
+          <td><a href="{{mcaresult.file.url}}">download</a></td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        </tbody>
+      </table>
+</div>
+{% endblock body %}

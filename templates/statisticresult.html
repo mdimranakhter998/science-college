@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}statistic result{% endblock title %}
+{% block body %}
+<div class="mca-table table-responsive-xl table-responsive-sm ">      
+    <table  >
+        <caption>Statistic Department Result</caption>
+        <thead>
+          <tr>
+            <th >S.No</th>
+            <th>Date of Upload</th>
+            <th>Title</th>
+            <th>Files</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% if statistic_result %}
+        {% for statisticresult in statistic_result %}     
+        <tr>                    
+          <td>{{ statisticresult.id}}</td>
+          <td>{{ statisticresult.upload_date|date:"d-m-Y"}}</td>
+          <td>{{ statisticresult.title}}</td>
+          <td><a href="{{ statisticresult.file.url}}">download</a></td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        </tbody>
+      </table>
+</div>
+{% endblock body %}

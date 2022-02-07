@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}mca admission{% endblock title %}
+{% block body %}
+<div class="mca-table table-responsive-xl table-responsive-sm ">      
+    <table  >
+        <caption>MCA Department Admission</caption>
+        <thead>
+          <tr>
+            <th >S.No</th>
+            <th>Upload Date</th>
+            <th>Title</th>
+            <th>Files</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% if mca_admission %}
+        {% for mcaadmission in mca_admission %}     
+        <tr>                    
+          <td>{{mcaadmission.id}}</td>
+          <td>{{mcaadmission.upload_date|date:"d-m-Y"}}</td>
+          <td>{{mcaadmission.title}}</td>
+          <td><a href="{{mcaadmission.file.url}}">download</a></td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+         
+        </tbody>
+      </table>
+</div>
+{% endblock body %}
