@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j2!f()0h)@(nm*&$2cb_p!(rtp6xh(emfo)snpfa%*@hp8p&0-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["sciencecollege.herokuapp.com","127.0.0.1"]
 
@@ -53,12 +53,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'college.urls'
 TEMPLATES_DIR = BASE_DIR / "templates" 
-
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR,],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,7 +121,7 @@ STATICFILES_DIRS = [
     BASE_DIR/'static',
        
 ]
-STATIC_ROOT=BASE_DIR/'staticfiles'
+#STATIC_ROOT=BASE_DIR/'staticfiles'
 STATIC_URL = '/static/'
 MEDIA_URL='/media/'
 MEDIA_ROOT=BASE_DIR/'media'

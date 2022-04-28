@@ -17,3 +17,8 @@ def specialization(value):
 @register.filter
 def experience(value):
     return (str(value)+" "+"years")
+
+@register.filter
+def mca_faculty_lenght(value):
+    n=len(value)
+    return n-1

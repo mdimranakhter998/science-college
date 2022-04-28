@@ -6,21 +6,21 @@
     <table  >
         <caption>M.C.A Department Result</caption>
         <thead>
-          <tr>
-            <th >S.No</th>
-            <th>Date of Upload</th>
-            <th>Title</th>
-            <th>Files</th>
+          <tr >
+            <th class="py-1">S.No</th>
+            <th class="py-1">Date of Upload</th>
+            <th class="py-1">Title</th>
+            <th class="py-1">Files</th>
           </tr>
         </thead>
         <tbody>
         {% if mca_result %}
         {% for mcaresult in mca_result %}     
         <tr>                    
-          <td>{{mcaresult.id}}</td>
-          <td>{{mcaresult.upload_date|date:"d-m-Y"}}</td>
-          <td>{{mcaresult.title}}</td>
-          <td><a href="{{mcaresult.file.url}}">download</a></td>
+          <td class="py-1">{{mcaresult.id}}</td>
+          <td class="py-1">{{mcaresult.upload_date|date:"d-m-Y"}}</td>
+          <td class="py-1">{{mcaresult.title}}</td>
+          <td class="py-1"><a href="{{mcaresult.file.url}}">download</a></td>
         </tr>
         {% endfor %}
         {% endif %}

@@ -6,22 +6,17 @@ $("document").ready(function(){
     $("#adminclose").click(function(){
          $("#adminlogin").hide()
     }) 
-    $("#adminlogin-form").validate({               
+    $("#adminlogin-form").validate({                     
         submitHandler: function(form){            
             $.ajax({
                 url: "/adminlogin/",
-                type: "POST",
+                type: "POST",                
                 data: $("#adminlogin-form").serialize(),
                 datatype:JSON,
                 success: function(response) {
-                    if(response['status']==200){                        
-                        $("#adminlogin-form").trigger("reset");                       
-                        swal({
-                            title: "Query successfully!",
-                            text: "Thank you for contant us we will contact you soon!",
-                            icon: "success",
-                            button: "ok",
-                          });
+                    if(response['status']==202){    
+                      window.location="/admin/"                                 
+                       
                           
                     }
                 },            

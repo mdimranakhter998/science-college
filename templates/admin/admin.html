@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <!--bootstrap icon-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <title>{% block title %}{% endblock title%}</title>
+   </head>
+   <body>
+      <nav class="navbar navbar-light  bg-dark" >
+         <div class="container-fluid px-4">
+            <div class="logo d-inline-flex col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 pb-2">
+               <img width="90px" height="50px" src="{% static 'images/psc.png' %}" alt="" srcset="">
+               <h1 class="ms-2 text-light">Admin</h1>               
+            </div>
+              <span>            
+              <a data-bs-toggle="offcanvas" href="#sidebarcanvas" role="button" aria-controls="offcanvasExample">
+                <i class="bi bi-list" style="color:white;font-size:25px;"></i></a>
+              </span>
+            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-xs-6 " >
+               <form class="d-flex ">
+                <i class="bi bi-search color-light" style="position: relative; top:5px; left:35px"></i> 
+                  <input class="form-control  ps-5 " type="search" placeholder="Search" aria-label="Search">                 
+               </form>
+            </div>
+            <div class="d-inline-flex col-xl-3 col-lg-3 col-md-2 col-sm-6 col-xs-6  p-2 ">
+               <a class="pt-2" href="#">
+               <img  class="rounded-circle bg-dark" src="{% static 'images/imran.jpeg' %}" alt="" width="40" height="29">
+               </a>   
+               <div class="dropdown profile-button">
+                  <button class="btn text-light dropdown-toggle btn-md ms-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
+                  Imran                 
+                  </button>               
+                  <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+                     <li><a class="dropdown-item text-light" href="#">Profile</a></li>
+                     <li><a class="dropdown-item text-light" href="#">Setting</a></li>
+                     <li><a class="dropdown-item text-light" href="#">SignOut</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-lg-2 col-lg-2 col-md-2 col-sm-6 col-xs-6 ">
+               <button type="button" class="btn btn-dark">Back To Home</button>
+            </div>
+         </div>
+      </nav>
+      <div class="sidebar bg-dark offcanvas offcanvas-start col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12" id="sidebarcanvas" tabindex="-1" data-bs-scroll="true" data-bs-backdrop="false" > 
+        <div>
+          <a type="button" class=" btn-close btn-close-white text-reset pb-5" data-bs-dismiss="offcanvas" aria-label="Close" style="float:right"></a>
+        </div>
+        <ul class="sidebar-menu ">
+          <a class="mb-2" data-bs-toggle="collapse" href="#notice" role="button"><li>Notice <i class="bi bi-chevron-compact-down"></i><a>
+            <ul class="collapse" id="notice">
+              <a  data-bs-toggle="collapse" href="#mcanotice" role="button"><li>Mca Notice <i class="bi bi-chevron-compact-down"></i></a>
+                <ul class="collapse" id="mcanotice">
+                  <li><a href="{% url 'add_mca_notice' %}">Add Notice</a></li>    
+                  <li><a href="">Notice Information</a></li>
+                </ul>
+              </li>
+              <a data-bs-toggle="collapse" href="#statisticnotice" role="button"><li>Statistics Notice <i class="bi bi-chevron-compact-down"></i></a>
+                    <ul class="collapse" id="statisticnotice">
+                      <li><a href="">Add Notice</a></li>                
+                      <li><a href="">Notice Information</a></li>
+                    </ul>
+              </li>
+            </ul>
+          </li>
+          <a  class="mb-2" data-bs-toggle="collapse" href="#result" role="button"> <li>Result <i class="bi bi-chevron-compact-down"></i></a>
+            <ul class="collapse" id="result">
+              <a data-bs-toggle="collapse" href="#mcaresult" role="button"><li>Mca Result <i class="bi bi-chevron-compact-down"></i></a>
+                    <ul class="collapse" id="mcaresult">
+                      <li><a href="">Add Result</a></li>            
+                      <li><a href="">Result Details</a></li>
+                    </ul>
+              </li>
+              <a data-bs-toggle="collapse" href="#statisticresult" role="button"><li>Statistics Result <i class="bi bi-chevron-compact-down"></i></a>
+                <ul class="collapse" id="statisticresult">
+                  <li><a href="">Add Result</a></li>         
+                  <li><a href="">Result Details</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <a  class="mb-2" data-bs-toggle="collapse" href="#admission" role="button"><li>Admission <i class="bi bi-chevron-compact-down"></i></a>
+          <ul class="collapse" id="admission">
+            <a data-bs-toggle="collapse" href="#mcaadmission" role="button"><li>Mca Admission <i class="bi bi-chevron-compact-down"></i></a>
+              <ul class="collapse" id="mcaadmission">
+                <li><a href="">Add Admission</a></li>
+                <li><a href="">Admission Detail</a></li>
+              </ul>
+            </li>
+            <a data-bs-toggle="collapse" href="#statisticadmission" role="button"><li>Statistic Admission <i class="bi bi-chevron-compact-down"></i></a>
+              <ul class="collapse"id="statisticadmission">
+                <li><a href="">Add Admission</a></li>
+                <li><a href="">Admission Detail</a></li>
+              </ul>
+            </li>
+          </ul>
+          </li>
+          <a  class="mb-2" data-bs-toggle="collapse" href="#faculty" role="button"><li>Faculty <i class="bi bi-chevron-compact-down"></i></a>
+            <ul class="collapse" id="faculty">
+              <a  data-bs-toggle="collapse" href="#mcafaculty" role="button"><li>Mca Faculty <i class="bi bi-chevron-compact-down"></i></a>
+                <ul class="collapse" id="mcafaculty">
+                  <li><a href="">Add Faculty</a></li>
+                  <li><a href="">Faculty Detail</a></li>
+                </ul>
+              </li>
+              <a data-bs-toggle="collapse" href="#statisticfaculty" role="button"><li>Statistic Faculty <i class="bi bi-chevron-compact-down"></i></a>
+                <ul class="collapse" id="statisticfaculty">
+                  <li><a href="">Add Faculty</a></li>
+                  <li><a href="">Faculty Detail</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <a  class="mb-2" data-bs-toggle="collapse" href="#question" role="button"><li>Previous Year Question <i class="bi bi-chevron-compact-down"></i></a>
+            <ul class="collapse" id="question">
+              <a data-bs-toggle="collapse" href="#mcaquestion" role="button"><li>Mca Question <i class="bi bi-chevron-compact-down"></i></a>
+                <ul class="collapse" id="mcaquestion">
+                  <a data-bs-toggle="collapse" href="#mcaaddquestion" role="button"><li>Add Question <i class="bi bi-chevron-compact-down"></i></a>
+                    <ul class="collapse" id="mcaaddquestion">
+                      <li><a href="">Semister 1</a></li>
+                      <li><a href="">Semister 2</a></li>
+                      <li><a href="">Semister 3</a></li>
+                      <li><a href="">Semister 4</a></li>
+                      <li><a href="">Semister 5</a></li>
+                      <li><a href="">Semister 6</a></li>                     
+                    </ul>
+                  </li>
+                  
+                  <a data-bs-toggle="collapse" href="#mcaquestiondetail" role="button"><li>Question Detail <i class="bi bi-chevron-compact-down"></i></a>
+                    <ul class="collapse" id="mcaquestiondetail">
+                      <li><a href="">Semister 1</a></li>
+                      <li><a href="">Semister 2</a></li>
+                      <li><a href="">Semister 3</a></li>
+                      <li><a href="">Semister 4</a></li>
+                      <li><a href="">Semister 5</a></li>
+                      <li><a href="">Semister 6</a></li>                   
+                   </ul>
+                  </li>
+                </ul>
+            </li>
+            <a  data-bs-toggle="collapse" href="#statisticquestion" role="button"><li>Statistics Question <i class="bi bi-chevron-compact-down"></i></a>
+                <ul class="collapse" id="statisticquestion">
+                  <a  data-bs-toggle="collapse" href="#statisticaddquestion" role="button"><li>Add Question <i class="bi bi-chevron-compact-down"></i></a>
+                    <ul class="collapse" id="statisticaddquestion">
+                      <li><a href="">Semister 1</a></li>
+                      <li><a href="">Semister 2</a></li>
+                      <li><a href="">Semister 3</a></li>
+                      <li><a href="">Semister 4</a></li>
+                      <li><a href="">Semister 5</a></li>
+                      <li><a href="">Semister 6</a></li>                     
+                    </ul>
+                  </li>
+                  <a  data-bs-toggle="collapse" href="#statisticquestiondetail" role="button"><li>Question Detail <i class="bi bi-chevron-compact-down"></i></a>
+                    <ul class="collapse" id="statisticquestiondetail">
+                      <li><a href="">Semister 1</a></li>
+                      <li><a href="">Semister 2</a></li>
+                      <li><a href="">Semister 3</a></li>
+                      <li><a href="">Semister 4</a></li>
+                      <li><a href="">Semister 5</a></li>
+                      <li><a href="">Semister 6</a></li>  
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>       
+          <a  class="mb-2"  data-bs-toggle="collapse" href="#studentblog" role="button"><li>Student Blog <i class="bi bi-chevron-compact-down"></i></a>
+          <ul class="collapse" id="studentblog">
+            <li><a href="">Add Student Blog</a></li>
+            <li><a href="">Student Blog Detail</a></li>
+          </ul>
+        </li>
+         
+      </div>
+      {% block body %}
+      {% endblock body %}
+      <!---bootstrap js-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      {% block js %}
+      {% endblock js %}
+   </body>
+</html>
+

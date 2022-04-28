@@ -23,13 +23,15 @@
         </div> 
                  
         <div class="navbar-content" id="content">                                 
-            <div class="search">                    
-                <input type="text" name="search" id=""  placeholder="Search Blog" >
-            </div>
-            <div class="block"><a href="{% url 'studentblog' %}"><i class="fas fa-search"></i></a></div>
-        
+            <div class="search "> 
+                <form class="d-flex flex-row" action="{% url 'studentblog' %}" method="post"> {% csrf_token %}
+                    <input type="text" name="search" id=""  placeholder="Search Blog" >
+                    <button class="block ms-1" type="submit"><i class="fas fa-search"></i></button>
+                </form>                 
+               
+            </div>        
             <div class="block" id="admin"><i class="fas fa-sign-in-alt"></i></div>
-            <div class="block"><a href="">Go To Patna University</a></div>
+            <div class="block"><a href="https://pup.ac.in">Go To Patna University</a></div>
             <div class="block"> <a href="{% url 'studentblog' %}">Student Blog</a></div>
         </div>
         <div class="menu-btn" id="bar">
@@ -147,7 +149,7 @@
             <h4>Admin Login</h4>
         </div>
         <div class="contactus-body px-3 py-2">
-       <form action="{% url 'adminlogin' %}" enctype="multipart/form-data" method="POST"  id="adminlogin-form" novalidate> {% csrf_token %}
+       <form  enctype="multipart/form-data" method="POST"  id="adminlogin-form" novalidate> {% csrf_token %}
                         
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="userid" name="userid" placeholder="Enter your UserId">
@@ -171,6 +173,7 @@
     
 
 <!-- footer -->
+
 <div class="footer">
     <div class="address">
         <p>

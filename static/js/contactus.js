@@ -20,7 +20,8 @@ $("document").ready(function(){
 
         },
         submitHandler: function(form){  
-            let data= new FormData()  
+            let data= new FormData()
+            data.append("csfrmiddlewaretoken",$('input[name="csrfmiddlewaretoken"]').val())  
             data.append("name",$("#name").val())
             data.append("email",$("#email").val()) 
             data.append("textarea",$("#textarea").val())           
@@ -29,7 +30,7 @@ $("document").ready(function(){
                 url: "/contactus/",
                 type: "POST",
                 contentType: false,
-                processData: false,                
+                processData: true,                
                 data: data ,                
                 success: function(response) {
                     if(response['status']==200){                        

@@ -7,20 +7,20 @@
         <caption>M.C.A Department e-books for various subjects</caption>
         <thead>
           <tr>
-            <th >S.No</th>
-            <th>Book Title</th>
-            <th>Book Writer</th>
-            <th>Files</th>
+            <th class="py-1" >S.No</th>
+            <th class="py-1">Book Title</th>
+            <th class="py-1">Book Writer</th>
+            <th class="py-1">Files</th>
           </tr>
         </thead>
         <tbody>
         {% if mcaebook %}
         {% for mcaebooks in mcaebook %}     
         <tr>                    
-          <td>{{mcaebooks.id}}</td>
-          <td>{{mcaebooks.title}}</td>
-          <td>{{mcaebooks.writer}}</td>
-          <td><a href="{{mcaebooks.file.url}}">download</a></td>
+          <td class="py-1">{{mcaebooks.id}}</td>
+          <td class="py-1">{{mcaebooks.title}}</td>
+          <td class="py-1">{{mcaebooks.writer}}</td>
+          <td class="py-1"><a href="{{mcaebooks.file.url}}">download</a></td>
         </tr>
         {% endfor %}
         {% endif %}         

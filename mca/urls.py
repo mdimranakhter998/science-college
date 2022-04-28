@@ -34,5 +34,7 @@ urlpatterns = [
     path('rightinfo/',views.rightinfo,name='rightinfo'),
     path('contactus/',views.contactus,name='contactus'),
     path('adminlogin/',views.adminlogin,name='adminlogin'),
+    path('adminpanel/',views.adminpanel,name='adminpanel'),
+    path('add_mca_notice/',views.add_mca_notice,name="add_mca_notice")
     
 ]

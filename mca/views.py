@@ -45,8 +45,7 @@ def latestdept(request):
     return render(request,'latestdept.html',context={"latestdept":id})
 
 def mcacourse(request):
-    mcacourse=McaCourse.objects.last()
-    print(mcacourse)  
+    mcacourse=McaCourse.objects.last()      
     return HttpResponse( "<a href='{{% mcacoursse.file.url %}}'>download</a>")
 
 # department faculty
@@ -114,20 +113,26 @@ def gallery(request):
     return render(request,'gallery.html',context={'gallery':g})
 
 def studentblog(request):
+   
     s=StudentBlog.objects.all()
     paginator=Paginator(s,2)
     page_number = request.GET.get('page')
     st = paginator.get_page(page_number) 
     total_no=[n+1 for n in range(st.paginator.num_pages)]    
-    p=request.GET.get('filter')       
-    if p:
-        se=StudentBlog.objects.get(pk=p)       
-        data={'studentfilter':se,'total':total_no,'post':st}        
-        return render(request,'studentblog.html',context=data)       
-    else:
-        data={'studentblog':st,'total':total_no}
-        return render(request,'studentblog.html',context=data)   
-        
+    p=request.GET.get('filter')  
+    if request.method=='GET':     
+        if p:
+            se=StudentBlog.objects.get(pk=p) 
+
+            data={'studentfilter':se,'total':total_no,'post':st}        
+            return render(request,'studentblog.html',context={'data':data})       
+        else:
+            data={'studentblog':st,'total':total_no}               
+            return render(request,'studentblog.html',context={'data':data}) 
+    if request.method=='POST':
+        search=StudentBlog.objects.filter(title__contains=request.POST.get('search'))  
+        data={'studentfilter':search,'total':total_no,'post':st}
+        return render(request,'studentblog.html',context={'data':data})
 
 def aboutus(request):
     return render(request,'aboutus.html')
@@ -147,15 +152,21 @@ def contactus(request):
         c=ContactUs(name=name,email=email,query=query,file=files)
         c.save()        
     return JsonResponse({"status":200})
-
+@csrf_exempt
 def adminlogin(request):
     if request.method=='POST':
         username=request.POST.get('userid')       
         password=request.POST.get('password')
         user = authenticate(request, username=username, password=password)        
         if user is not None:                       
-            login(request, user)  
-            return redirect('admin/')             
+            login(request, user) 
+            print("imran") 
+            return JsonResponse({'status':202})                 
         else:
-            return JsonResponse({'status':401})
-    
+           return JsonResponse({'status':511})
+
+def adminpanel(request):
+    return render(request,'admin/admin.html')   
+
+def add_mca_notice(request):
+    return render(request,'admin/mcaaddnotice.html')
