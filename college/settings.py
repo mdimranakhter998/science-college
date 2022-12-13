@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-j2!f()0h)@(nm*&$2cb_p!(rtp6xh(emfo)snpfa%*@hp8p&0-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["sciencecollege.herokuapp.com","127.0.0.1",'.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ["sciencecollege.herokuapp.com","127.0.0.1"]
 
 
 
@@ -76,26 +76,14 @@ WSGI_APPLICATION = 'college.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'content',
-        'USER': 'postgres',
-        'PASSWORD': 'imran',
-        'HOST': 'localhost',
-        'PORT': '5432',
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-
 }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
